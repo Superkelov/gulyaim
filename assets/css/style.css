@@ -1704,3 +1704,13 @@ body{
 .p-brand{margin-top:12px;}
 .p-name{margin-top:5px;}
 .p-price{margin-top:8px;}
+
+/* city line under the name in the profile cover */
+.profile-city{
+  margin-top:12px;
+  font-size:11px;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  color:rgba(255,253,246,.68);
+}
+.profile-role{margin-top:6px;}
