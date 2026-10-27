@@ -298,10 +298,11 @@ h2.display{font-size:clamp(34px,5.4vw,56px);line-height:.98;}
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:18px 12px;
-  padding-block:26px;
+  padding:24px 20px;
   margin-top:26px;
-  border-top:1px solid var(--line-soft);
-  border-bottom:1px solid var(--line-soft);
+  border-radius:20px;
+  background:var(--green-tint);
+  color:var(--green-ink);
 }
 .fact-num{
   font-family:var(--font-display);
@@ -315,6 +316,7 @@ h2.display{font-size:clamp(34px,5.4vw,56px);line-height:.98;}
   line-height:1.35;
   color:var(--ink-soft);
 }
+.facts .fact-label{color:rgba(4,35,21,.75);}
 
 /* ---------- Sections ---------- */
 
@@ -1135,9 +1137,9 @@ dialog::backdrop{background:rgba(10,18,14,.5);backdrop-filter:blur(2px);}
    ========================================================================== */
 
 :root{
-  --green:#12B76A;
+  --green:#16C172;
   --green-deep:#05643A;
-  --green-dark:#0E9E5B;
+  --green-dark:#12B76A;
   --green-ink:#042315;
   --green-tint:#D8F5E4;
 }
