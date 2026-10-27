@@ -332,20 +332,32 @@
     return lines.join('\n');
   }
 
+  /* Прямая ссылка в чат с уже вставленным текстом.
+     Если номер WhatsApp задан (data-wa-phone на <body>), используем wa.me/<номер>?text=...,
+     иначе открываем чат по QR-ссылке, а текст кладём в буфер обмена. */
+  function waChatUrl(text) {
+    if (SITE.waPhone) {
+      return 'https://wa.me/' + SITE.waPhone + '?text=' + encodeURIComponent(text);
+    }
+    return null;
+  }
+
+  function openChat(text) {
+    var url = waChatUrl(text);
+    if (url) {
+      window.open(url, '_blank', 'noopener');
+      return true;
+    }
+    window.open(SITE.wa, '_blank', 'noopener');
+    return false;
+  }
+
   async function sendOrder() {
     var text = orderText();
     if (!text) return;
+    if (openChat(text)) return;
     try { await window.copyText(text); } catch (e) {}
-    if (navigator.share) {
-      try {
-        await navigator.share({ text: text });
-        return;
-      } catch (e) {
-        if (e && e.name === 'AbortError') return;
-      }
-    }
     toast('Заказ скопирован, вставьте его в чат');
-    window.open(SITE.wa, '_blank', 'noopener');
   }
 
   cdBody.addEventListener('click', function (e) {
@@ -393,10 +405,13 @@
         (p.desc ? '<p class="psheet-desc">' + UI.esc(p.desc) + '</p>' : '') +
       '</div>';
 
+    var askText = 'Здравствуйте! Интересует «' + p.title + '»' + (p.vol ? ' (' + p.vol + ')' : '') + '.';
+    var askHref = waChatUrl(askText) || SITE.wa;
+
     pdFoot.innerHTML =
       '<div class="sheet-foot-inner">' +
         '<button class="btn btn-primary" type="button" data-add="' + p.id + '">В корзину</button>' +
-        '<a class="btn btn-outline" href="' + SITE.wa + '" target="_blank" rel="noopener">' +
+        '<a class="btn btn-outline" href="' + askHref + '" target="_blank" rel="noopener">' +
           '<svg aria-hidden="true"><use href="#i-whatsapp"></use></svg> Спросить' +
         '</a>' +
       '</div>';

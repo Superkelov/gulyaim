@@ -1682,3 +1682,25 @@ body{
 
 /* tighter portrait crop inside the circle */
 .profile-photo img{object-position:50% 30%;transform:scale(1.22);}
+
+/* ==========================================================================
+   Spacing polish
+   ========================================================================== */
+
+.profile-company-name{letter-spacing:.3em;}
+.profile-card{padding:clamp(30px,5vw,64px) clamp(20px,4.4vw,56px);}
+.profile-photo{margin-top:clamp(24px,4vw,34px);}
+.profile-name{margin-top:clamp(20px,3.2vw,28px);}
+.profile-role{margin-top:12px;}
+.profile-lead{margin-top:20px;line-height:1.6;}
+.profile-actions{margin-top:28px;}
+
+.section-head{gap:16px;margin-bottom:clamp(30px,4.5vw,48px);}
+.facts{padding-block:28px;}
+.grid-products{gap:30px 14px;}
+.scroller{gap:14px;}
+
+.cat-name{margin-top:12px;}
+.p-brand{margin-top:12px;}
+.p-name{margin-top:5px;}
+.p-price{margin-top:8px;}

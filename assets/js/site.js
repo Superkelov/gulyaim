@@ -5,6 +5,7 @@
   var body = document.body;
   var SITE = {
     wa: body.dataset.wa || '',
+    waPhone: (body.dataset.waPhone || '').replace(/[^0-9]/g, ''),
     max: body.dataset.max || '',
     vk: body.dataset.vk || '',
     email: body.dataset.email || '',
