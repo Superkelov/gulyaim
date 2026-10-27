@@ -1679,3 +1679,6 @@ body{
   .profile-actions{margin-top:16px;}
   .profile-company-sub{display:none;}
 }
+
+/* tighter portrait crop inside the circle */
+.profile-photo img{object-position:50% 30%;transform:scale(1.22);}
