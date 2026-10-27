@@ -1470,3 +1470,101 @@ dialog::backdrop{background:rgba(3,20,12,.55);}
   .hero-actions .btn{height:48px;}
   .facts{padding-block:18px;}
 }
+
+/* ==========================================================================
+   White type on green: кремовые кнопки, белый текст на зелёном
+   ========================================================================== */
+
+:root{
+  --on-green:#FFFDF6;
+  --on-green-soft:rgba(255,253,246,.8);
+}
+
+body{color:var(--on-green);}
+
+/* header */
+.brand-name{color:var(--on-green);}
+.brand-tag{color:rgba(255,253,246,.72);}
+.nav-link{color:rgba(255,253,246,.85);}
+.nav-link:hover{color:#FFFFFF;background:rgba(255,253,246,.12);}
+.nav-wa{background:var(--paper);color:var(--ink);}
+.nav-wa:hover{background:#FFFFFF;}
+
+/* hero */
+.eyebrow{color:var(--on-green-soft);}
+.hero-body h1{color:var(--on-green);}
+.hero-body h1::after{background:var(--ink);}
+.hero-lead{color:var(--on-green-soft);}
+
+/* buttons */
+.btn-primary{background:var(--paper);color:var(--ink);box-shadow:0 18px 34px -22px rgba(2,18,11,.75);}
+.btn-primary:hover{background:#FFFFFF;}
+.btn-primary svg{opacity:.9;}
+.btn-outline{border-color:rgba(255,253,246,.5);color:var(--on-green);}
+.btn-outline:hover{background:rgba(255,253,246,.14);border-color:var(--on-green);}
+.btn-quiet{background:var(--paper);color:var(--ink);}
+
+/* facts */
+.facts{color:var(--on-green);border-color:rgba(255,253,246,.28);}
+.facts .fact-label{color:var(--on-green-soft);}
+
+/* sections */
+.lead,.section-head .lead{color:var(--on-green-soft);}
+.text-link{color:var(--on-green);border-color:rgba(255,253,246,.42);}
+.text-link:hover{border-color:var(--on-green);}
+
+/* category + product cards */
+.cat-name{color:var(--on-green);}
+.cat-count{color:var(--on-green-soft);}
+.p-brand{color:var(--on-green-soft);}
+.p-name{color:var(--on-green);}
+.p-price b{color:var(--on-green);}
+.p-price span{color:var(--on-green-soft);}
+.p-badge{background:var(--paper);color:var(--ink);}
+
+/* steps */
+.step h3{color:var(--on-green);}
+.step p{color:var(--on-green-soft);}
+.step-num{color:rgba(255,253,246,.55);}
+
+/* catalog */
+.cat-hero h1{color:var(--on-green);}
+.cat-hero p{color:var(--on-green-soft);}
+.result-count{color:var(--on-green-soft);}
+.result-count b{color:var(--on-green);}
+.chip{color:var(--on-green);border-color:rgba(255,253,246,.42);}
+.chip:hover{color:#FFFFFF;border-color:var(--on-green);}
+.chip.is-active{background:var(--paper);border-color:var(--paper);color:var(--ink);}
+.chip.is-active .chip-n{color:rgba(6,37,26,.62);}
+.empty h3{color:var(--on-green);}
+.empty p{color:var(--on-green-soft);}
+.empty svg{color:rgba(255,253,246,.55);}
+.search-input{color:var(--ink);}
+
+/* footer stays dark with cream text */
+.footer{color:rgba(247,245,236,.92);}
+
+/* cart bar */
+.cart-bar-btn{background:var(--paper);color:var(--ink);box-shadow:0 18px 34px -22px rgba(2,18,11,.75);}
+.cart-bar-right .pill{background:rgba(6,37,26,.1);}
+
+/* final type tuning on green */
+.hero-body h1::after{display:none;}
+.step-num{color:rgba(255,253,246,.82);}
+
+/* slightly deeper canvas for better white-text contrast */
+:root{
+  --canvas:#0FA968;
+  --green:#0FA968;
+}
+body{
+  background:
+    radial-gradient(140% 90% at 50% -10%, #17BE78 0%, #0FA968 46%, #0B9557 100%) fixed;
+}
+.header{background:rgba(15,169,104,.84);}
+.search-row{background:var(--canvas);}
+.cart-bar{background:linear-gradient(to top,rgba(15,169,104,.99) 55%,rgba(15,169,104,0));}
+
+/* transparent header at rest, filled when scrolled */
+.header{background:transparent;}
+.header.is-scrolled{background:rgba(12,150,92,.94);border-bottom-color:rgba(255,253,246,.18);}
