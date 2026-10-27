@@ -2102,3 +2102,21 @@ body{
 
 .viewer-full{display:block;width:100%;}
 .viewer-full img{cursor:zoom-in;}
+
+/* buttons inside cream sheets must be dark, not cream-on-cream */
+.sheet .btn-outline{
+  color:var(--ink);
+  border-color:rgba(14,36,26,.28);
+}
+.sheet .btn-outline:hover{
+  background:rgba(14,36,26,.06);
+  border-color:var(--ink);
+}
+.sheet .btn-primary{
+  background:var(--green);
+  color:var(--green-ink);
+}
+.sheet .btn-quiet{
+  background:var(--green-tint);
+  color:var(--green-deep);
+}
