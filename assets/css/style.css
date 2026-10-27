@@ -2120,3 +2120,6 @@ body{
   background:var(--green-tint);
   color:var(--green-deep);
 }
+
+/* dialog container is a focus target only, no green rim */
+.sheet:focus{outline:none;}
