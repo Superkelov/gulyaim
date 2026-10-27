@@ -1714,3 +1714,107 @@ body{
   color:rgba(255,253,246,.68);
 }
 .profile-role{margin-top:6px;}
+
+/* ==========================================================================
+   Reference-style sections: cover video, company, products, gallery, partner
+   ========================================================================== */
+
+/* cover background video */
+.profile-card{position:relative;}
+.profile-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:.5;pointer-events:none;
+}
+.profile-overlay{
+  position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg, rgba(5,32,18,.38) 0%, rgba(5,32,18,.72) 100%);
+}
+.profile-card > *{position:relative;z-index:1;}
+
+/* company values grid */
+.company-grid{display:grid;grid-template-columns:1fr;gap:26px 40px;}
+@media (min-width:640px){.company-grid{grid-template-columns:1fr 1fr;gap:34px 44px;}}
+.company-item .k{
+  display:inline-block;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--green-deep);
+  border-bottom:2px solid var(--green);padding-bottom:4px;
+}
+.company-item .v{margin-top:10px;font-size:15px;line-height:1.6;color:var(--ink-soft);}
+
+/* video + checklist card */
+.video-card{
+  background:var(--paper);border-radius:20px;overflow:hidden;
+  box-shadow:0 22px 44px -30px rgba(2,18,11,.6);
+}
+.video-card video{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#fff;}
+.video-card .cap{padding:14px 18px;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line-soft);}
+
+.checklist-card{
+  background:var(--paper);border-radius:20px;padding:22px 20px;
+  box-shadow:0 22px 44px -30px rgba(2,18,11,.6);
+}
+.checklist-card .k{
+  display:inline-block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--green-deep);border-bottom:2px solid var(--green);padding-bottom:4px;
+}
+.checklist{margin-top:16px;display:grid;gap:11px;}
+.checklist li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--ink-soft);}
+.checklist .tick{
+  flex:none;width:20px;height:20px;margin-top:1px;border-radius:50%;
+  background:var(--green);color:var(--ink);display:grid;place-items:center;
+}
+.checklist .tick svg{width:11px;height:11px;}
+
+.products-split{display:grid;gap:16px;margin-top:clamp(24px,4vw,36px);}
+@media (min-width:860px){.products-split{grid-template-columns:1.05fr .95fr;gap:24px;align-items:start;}}
+
+/* video-catalog gallery (horizontal snap scroll) */
+.gallery{
+  display:grid;grid-auto-flow:column;grid-auto-columns:76%;
+  gap:14px;overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);
+  padding-bottom:8px;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);
+  scrollbar-width:none;
+}
+.gallery::-webkit-scrollbar{display:none;}
+.gallery figure{margin:0;scroll-snap-align:start;}
+.gallery img{
+  width:100%;border-radius:16px;display:block;
+  background:#fff;box-shadow:0 18px 36px -26px rgba(2,18,11,.7);
+}
+@media (min-width:860px){
+  .gallery{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin-inline:0;padding-inline:0;gap:22px 18px;}
+}
+
+/* partner sets */
+.sets{display:grid;gap:16px;margin-top:clamp(26px,4vw,38px);}
+@media (min-width:640px){.sets{grid-template-columns:repeat(3,1fr);gap:20px;}}
+.set{
+  background:var(--paper);border-radius:22px;padding:20px;
+  box-shadow:0 22px 44px -30px rgba(2,18,11,.6);
+  display:flex;flex-direction:column;gap:14px;
+}
+.set-media{
+  background:#fff;border-radius:14px;display:grid;place-items:center;
+  aspect-ratio:4/3;overflow:hidden;
+}
+.set-media img{width:100%;height:100%;object-fit:contain;}
+.set .set-title{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:.02em;}
+.set .set-pv{
+  align-self:flex-start;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green-deep);font-weight:600;background:var(--green-tint);
+  padding:4px 10px;border-radius:999px;
+}
+.set ul{display:grid;gap:7px;}
+.set li{position:relative;padding-left:16px;font-size:13.5px;line-height:1.45;color:var(--ink-soft);}
+.set li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--green);}
+
+/* partner section note */
+.partner-note{margin-top:20px;font-size:13.5px;color:var(--on-green-soft);}
+
+/* about card (О компании) */
+.about-card{
+  background:var(--paper);border-radius:26px;padding:clamp(24px,4.5vw,48px);
+  box-shadow:0 30px 60px -40px rgba(2,18,11,.75);
+}
