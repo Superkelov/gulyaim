@@ -1568,3 +1568,15 @@ body{
 /* transparent header at rest, filled when scrolled */
 .header{background:transparent;}
 .header.is-scrolled{background:rgba(12,150,92,.94);border-bottom-color:rgba(255,253,246,.18);}
+
+/* header: no filter at rest (avoids a tint band), frosted when scrolled */
+.header{
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+}
+.header.is-scrolled{
+  -webkit-backdrop-filter:saturate(150%) blur(12px);
+  backdrop-filter:saturate(150%) blur(12px);
+}
+.hero-lead,.lead,.section-head .lead{color:rgba(255,253,246,.86);}
+.eyebrow{color:rgba(255,253,246,.78);}
