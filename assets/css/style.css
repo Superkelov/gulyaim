@@ -2260,14 +2260,14 @@ body{
 .cert-block .cert-points li{color:var(--ink-soft);font-size:15px;}
 .cert-block .cert-points .tick{background:var(--green);color:var(--green-ink);}
 
-.cert-video{
+.cert-media{
   margin-top:20px;
   border-radius:16px;
   overflow:hidden;
   background:#062A1E;
   box-shadow:0 18px 36px -28px rgba(2,14,9,.7);
 }
-.cert-video video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+.cert-media video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
 
 @media (max-width:560px){
   .cover-company,.cover-sub,.cover-name,.cover-city,.cover-role{font-size:16px;letter-spacing:.09em;}
