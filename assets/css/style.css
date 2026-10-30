@@ -2329,3 +2329,7 @@ body{
   transform:scale(1.12);
 }
 .cover-scrim{background:linear-gradient(180deg, rgba(5,26,18,.72) 0%, rgba(5,26,18,.5) 42%, rgba(4,20,14,.9) 100%);}
+
+/* cover gif: blue celebration, softly blended */
+.cover-gif{opacity:.78;filter:blur(2px) saturate(1.05);transform:scale(1.04);}
+.cover-scrim{background:linear-gradient(180deg, rgba(5,26,18,.62) 0%, rgba(5,26,18,.42) 42%, rgba(4,20,14,.86) 100%);}
