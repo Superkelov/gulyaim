@@ -2317,3 +2317,15 @@ body{
 
 /* about: certificate gif inside the card */
 .cert-media img{width:100%;display:block;height:auto;}
+
+/* show the celebration a bit more, keep text readable */
+.cover-gif{opacity:.72;}
+.cover-scrim{background:linear-gradient(180deg, rgba(5,26,18,.66) 0%, rgba(5,26,18,.46) 42%, rgba(4,20,14,.86) 100%);}
+
+/* soft, cinematic: blur the gif so it reads as moving light, not as a photo */
+.cover-gif{
+  opacity:.62;
+  filter:blur(14px) saturate(1.05);
+  transform:scale(1.12);
+}
+.cover-scrim{background:linear-gradient(180deg, rgba(5,26,18,.72) 0%, rgba(5,26,18,.5) 42%, rgba(4,20,14,.9) 100%);}
