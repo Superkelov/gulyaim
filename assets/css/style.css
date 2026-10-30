@@ -2274,3 +2274,9 @@ body{
   .cover .profile-photo{width:132px;}
   .cover-logo{width:48px;height:48px;padding:7px;}
 }
+
+/* cover fills exactly the screen below the sticky header (was overflowing) */
+.cover{
+  min-height:calc(100dvh - var(--header));
+  padding:24px var(--gutter) clamp(32px,6vw,60px);
+}
