@@ -2333,3 +2333,21 @@ body{
 /* cover gif: blue celebration, softly blended */
 .cover-gif{opacity:.78;filter:blur(2px) saturate(1.05);transform:scale(1.04);}
 .cover-scrim{background:linear-gradient(180deg, rgba(5,26,18,.62) 0%, rgba(5,26,18,.42) 42%, rgba(4,20,14,.86) 100%);}
+
+/* viewer: portrait catalog pages */
+.viewer-img{
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:72vh;
+  margin-inline:auto;
+  background:transparent;
+  box-shadow:0 18px 40px -26px rgba(2,14,9,.8);
+}
+.viewer-full{display:flex;justify-content:center;}
+.thumb{width:62px;}
+.thumb img{aspect-ratio:3/4;object-fit:cover;}
+@media (max-width:560px){
+  .viewer-img{max-height:64vh;}
+  .thumb{width:54px;}
+}
