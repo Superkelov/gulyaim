@@ -2280,3 +2280,14 @@ body{
   min-height:calc(100dvh - var(--header));
   padding:24px var(--gutter) clamp(32px,6vw,60px);
 }
+
+/* Cover: crisp designed background instead of low-res video */
+.cover{
+  background:
+    radial-gradient(90% 62% at 50% 24%, rgba(58,188,116,.34) 0%, rgba(58,188,116,0) 62%),
+    radial-gradient(130% 95% at 50% -12%, #155E3B 0%, #0B3F2B 46%, #05291C 100%);
+}
+.cover-glow{
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(58% 44% at 50% 58%, rgba(58,188,116,.15) 0%, rgba(58,188,116,0) 70%);
+}
