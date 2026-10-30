@@ -4,14 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Гуляим Айткулова · VIP партнёр GreenLeaf, Тюмень</title>
-<meta name="description" content="Личный сайт Гуляим Айткуловой, VIP партнёра GreenLeaf в Тюмени. Продукция, каталог из 457 товаров, как стать партнёром, заказ через WhatsApp.">
+<meta name="description" content="Личный сайт Гуляим Айткуловой, VIP партнёра GreenLeaf в Тюмени. Продукция, каталог, партнёрство и заказ через WhatsApp.">
 <meta name="theme-color" content="#0A3D2C">
 <link rel="canonical" href="https://superkelov.github.io/gulyaim/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Гуляим Айткулова · VIP партнёр GreenLeaf, Тюмень">
-<meta property="og:description" content="Продукция GreenLeaf, каталог из 457 товаров и партнёрство. Помогу выбрать и оформить заказ в WhatsApp.">
+<meta property="og:description" content="Продукция GreenLeaf, каталог и партнёрство. Помогу выбрать и оформить заказ в WhatsApp.">
 <meta property="og:image" content="https://superkelov.github.io/gulyaim/assets/img/portrait-900.jpg">
 <meta property="og:url" content="https://superkelov.github.io/gulyaim/">
 <meta name="twitter:card" content="summary_large_image">
@@ -75,44 +77,48 @@
     <div class="cover-overlay" aria-hidden="true"></div>
 
     <div class="wrap cover-content">
-      <div class="profile-company">
-        <div class="profile-company-name">GreenLeaf</div>
-        <div class="profile-company-sub">Компания нового формата · Семь лет в России</div>
+      <div class="cover-top">
+        <span class="cover-logo"><img src="assets/img/logo-badge.png" alt="GreenLeaf" width="256" height="256"></span>
+        <div class="cover-company">GreenLeaf</div>
+        <div class="cover-sub">Компания нового формата</div>
+        <div class="cover-sub">Семь лет в России</div>
       </div>
 
       <div class="profile-photo">
         <img src="assets/img/portrait-900.jpg"
              srcset="assets/img/portrait-900.jpg 900w, assets/img/portrait-1400.jpg 1400w"
-             sizes="(min-width: 860px) 220px, 176px"
+             sizes="(min-width: 860px) 210px, 168px"
              width="900" height="1350"
              alt="Гуляим Айткулова, VIP партнёр GreenLeaf"
              fetchpriority="high" decoding="async">
       </div>
 
-      <h1 class="profile-name">Гуляим Айткулова</h1>
-      <p class="profile-city">Тюмень</p>
-      <p class="profile-role">VIP партнёр</p>
-      <p class="profile-lead">Помогу выбрать уход, дом и здоровье из каталога GreenLeaf. 457 товаров, сертификаты качества и личная поддержка.</p>
-
-      <div class="profile-actions">
-        <a class="btn btn-primary" href="catalog.html">
-          Смотреть каталог
-          <svg aria-hidden="true"><use href="#i-arrow-right"></use></svg>
-        </a>
-        <a class="btn btn-outline" href="https://wa.me/79199211825" target="_blank" rel="noopener">
-          <svg aria-hidden="true"><use href="#i-whatsapp"></use></svg>
-          Написать в WhatsApp
-        </a>
+      <div class="cover-bottom">
+        <h1 class="cover-name">Гуляим Айткулова</h1>
+        <div class="cover-city">Тюмень</div>
+        <div class="cover-role">VIP партнёр</div>
       </div>
+
+      <nav class="cover-links" aria-label="Разделы сайта">
+        <a class="cover-link" href="#products">Продукция</a>
+        <a class="cover-link" href="#partner">Как стать партнёром</a>
+      </nav>
     </div>
   </section>
 
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head">
+  <section class="about-band" id="about">
+    <video class="about-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/certs-poster.jpg" aria-hidden="true">
+      <source src="assets/video/certs.mp4" type="video/mp4">
+    </video>
+    <div class="about-overlay" aria-hidden="true"></div>
+
+    <div class="wrap about-content">
+      <div class="about-head">
+        <span class="about-logo"><img src="assets/img/logo-badge.png" alt="GreenLeaf" width="256" height="256"></span>
         <h2 class="display">О компании</h2>
         <p class="lead">GreenLeaf: стратегия, миссия, ценности и программа компании.</p>
       </div>
+
       <div class="about-card">
         <div class="company-grid">
           <div class="company-item">
@@ -132,23 +138,13 @@
             <p class="v">Стать лучшим работодателем на мировом уровне и крупнейшей платформой качественных продуктов.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="cert-band">
-    <video class="cert-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/certs-poster.jpg" aria-hidden="true">
-      <source src="assets/video/certs.mp4" type="video/mp4">
-    </video>
-    <div class="cert-overlay" aria-hidden="true"></div>
-    <div class="wrap cert-content">
-      <h2 class="display">Качество подтверждено</h2>
-      <p class="lead">Международные сертификаты качества, производства и безопасности GreenLeaf.</p>
-      <ul class="cert-points">
-        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"></use></svg></span>Общие сертификаты</li>
-        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"></use></svg></span>Сертификаты Халяль</li>
-        <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"></use></svg></span>Производственные стандарты</li>
-      </ul>
+        <ul class="cert-points">
+          <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"></use></svg></span>Международные сертификаты качества</li>
+          <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"></use></svg></span>Сертификаты Халяль</li>
+          <li><span class="tick"><svg aria-hidden="true"><use href="#i-check"></use></svg></span>Производственные стандарты</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -264,8 +260,8 @@
   <section class="section" id="partner">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="display">Займи своё место в бизнес-системе</h2>
-        <p class="lead">Как стать партнёром и начать получать доход. На товарах, которыми мы пользуемся ежедневно, можно построить прибыльный бизнес.</p>
+        <h2 class="display">Как стать партнёром</h2>
+        <p class="lead">Займите своё место в бизнес-системе. На товарах, которыми мы пользуемся ежедневно, можно построить прибыльный бизнес.</p>
       </div>
 
       <div class="steps">

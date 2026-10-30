@@ -121,10 +121,13 @@
     emptyEl.hidden = list.length !== 0;
     grid.innerHTML = shown.map(UI.card).join('');
 
+    var isFiltered = state.q || state.cat !== 'all';
     if (list.length === 0) {
       countEl.innerHTML = 'Ничего не найдено';
+    } else if (isFiltered) {
+      countEl.innerHTML = 'Найдено <b>' + list.length + '</b> ' + plural(list.length, 'товар', 'товара', 'товаров');
     } else {
-      countEl.innerHTML = '<b>' + list.length + '</b> ' + plural(list.length, 'товар', 'товара', 'товаров');
+      countEl.innerHTML = 'Каталог продукции';
     }
 
     moreWrap.hidden = shown.length >= list.length || list.length === 0;
@@ -147,6 +150,10 @@
     searchTimer = setTimeout(function () {
       state.q = search.value;
       state.page = 1;
+      if (state.q && state.cat !== 'all') {
+        state.cat = 'all';
+        renderChips();
+      }
       syncUrl();
       apply(false);
     }, 120);
