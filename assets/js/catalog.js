@@ -75,13 +75,10 @@
   /* ---------- chips ---------- */
 
   function renderChips() {
-    var counts = {};
-    state.all.forEach(function (p) { counts[p.cat] = (counts[p.cat] || 0) + 1; });
     chips.innerHTML = CATS.map(function (c) {
-      var n = c.id === 'all' ? state.all.length : (counts[c.id] || 0);
       return '<button class="chip' + (state.cat === c.id ? ' is-active' : '') +
         '" type="button" data-cat="' + c.id + '" aria-pressed="' + (state.cat === c.id) + '">' +
-        c.label + ' <span class="chip-n">' + n + '</span></button>';
+        c.label + '</button>';
     }).join('');
   }
 
