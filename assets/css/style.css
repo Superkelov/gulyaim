@@ -2301,3 +2301,19 @@ body{
   .cover-links{margin-top:10px;}
   .cover-link{min-height:50px;padding:0 26px;font-size:12px;}
 }
+
+/* cover: animated GIF background with scrim for readability */
+.cover-gif{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:0;opacity:.55;
+  filter:saturate(.95);
+}
+.cover-scrim{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg, rgba(5,26,18,.78) 0%, rgba(5,26,18,.58) 42%, rgba(4,20,14,.9) 100%);
+}
+.cover-glow{z-index:2;}
+.cover-content{z-index:3;}
+
+/* about: certificate gif inside the card */
+.cert-media img{width:100%;display:block;height:auto;}
