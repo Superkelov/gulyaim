@@ -2291,3 +2291,13 @@ body{
   position:absolute;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(58% 44% at 50% 58%, rgba(58,188,116,.15) 0%, rgba(58,188,116,0) 70%);
 }
+
+/* desktop cover: fill the screen more */
+@media (min-width:900px){
+  .cover-content{gap:28px;}
+  .cover-company,.cover-sub,.cover-name,.cover-city,.cover-role{font-size:22px;}
+  .cover .profile-photo{width:220px;}
+  .cover-logo{width:70px;height:70px;padding:10px;}
+  .cover-links{margin-top:10px;}
+  .cover-link{min-height:50px;padding:0 26px;font-size:12px;}
+}
