@@ -1,4 +1,4 @@
-/* Presentation viewer: one page at a time, arrows, dots strip, swipe. */
+/* Presentation viewer: one page at a time, arrows, thumbnails, swipe, autoplay. */
 (function () {
   'use strict';
   var root = document.querySelector('[data-viewer]');
@@ -15,6 +15,11 @@
     return { src: t.dataset.src, alt: t.dataset.alt || '' };
   });
   var index = 0;
+  var timer = null;
+  var pausedUntil = 0;
+  var inView = true;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DELAY = 4500;
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
 
@@ -35,18 +40,35 @@
     }
   }
 
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  function start() {
+    stop();
+    if (reduce || !inView || document.hidden) return;
+    timer = setInterval(function () {
+      if (Date.now() < pausedUntil) return;
+      show(index + 1);
+    }, DELAY);
+  }
+
+  function pause() {
+    pausedUntil = Date.now() + 15000;
+  }
+
   root.addEventListener('click', function (e) {
-    if (e.target.closest('.viewer-next')) { show(index + 1); return; }
-    if (e.target.closest('.viewer-prev')) { show(index - 1); return; }
+    if (e.target.closest('.viewer-next')) { pause(); show(index + 1); return; }
+    if (e.target.closest('.viewer-prev')) { pause(); show(index - 1); return; }
     var th = e.target.closest('.thumb');
-    if (th) show(parseInt(th.dataset.i, 10) || 0);
+    if (th) { pause(); show(parseInt(th.dataset.i, 10) || 0); }
   });
 
   document.addEventListener('keydown', function (e) {
     var tag = (document.activeElement && document.activeElement.tagName) || '';
     if (/^(INPUT|TEXTAREA|SELECT)$/.test(tag)) return;
-    if (e.key === 'ArrowRight') show(index + 1);
-    else if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') { pause(); show(index + 1); }
+    else if (e.key === 'ArrowLeft') { pause(); show(index - 1); }
   });
 
   var stage = root.querySelector('.viewer-stage');
@@ -58,8 +80,23 @@
     if (startX === null) return;
     var dx = e.changedTouches[0].clientX - startX;
     startX = null;
-    if (Math.abs(dx) > 40) show(dx < 0 ? index + 1 : index - 1);
+    if (Math.abs(dx) > 40) { pause(); show(dx < 0 ? index + 1 : index - 1); }
   }, { passive: true });
 
+  if (document.hidden !== undefined) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else start();
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+      if (inView) start(); else stop();
+    }, { threshold: 0.15 });
+    io.observe(root);
+  }
+
   show(0);
+  start();
 })();

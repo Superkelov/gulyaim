@@ -2217,3 +2217,60 @@ body{
   .cover-link{min-height:42px;padding:0 16px;font-size:10.5px;letter-spacing:.12em;}
   .cover-logo{width:54px;height:54px;}
 }
+
+/* ==========================================================================
+   Cover: one serif font, one size for all lines (per request)
+   ========================================================================== */
+
+.cover-company,
+.cover-sub,
+.cover-name,
+.cover-city,
+.cover-role{
+  font-family:var(--font-display);
+  font-size:clamp(16px,2vw,21px);
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  line-height:1.65;
+  color:rgba(243,240,231,.94);
+}
+.cover-top{gap:0;}
+.cover-bottom{gap:0;}
+.cover-content{gap:clamp(14px,2.4vw,22px);}
+.cover-logo{width:56px;height:56px;padding:8px;}
+.cover .profile-photo{width:clamp(138px,24vw,190px);}
+.cover-links{margin-top:6px;}
+
+/* About: factory block + certificates video */
+.company-grid .company-item.wide{grid-column:1/-1;}
+
+.cert-block{
+  margin-top:clamp(24px,3.5vw,34px);
+  padding-top:clamp(20px,3vw,28px);
+  border-top:1px solid rgba(14,36,26,.12);
+}
+.cert-block .k{
+  display:inline-block;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--green-deep);
+  border-bottom:2px solid var(--green);padding-bottom:4px;
+}
+.cert-block .cert-points{margin-top:16px;gap:12px;max-width:none;}
+.cert-block .cert-points li{color:var(--ink-soft);font-size:15px;}
+.cert-block .cert-points .tick{background:var(--green);color:var(--green-ink);}
+
+.cert-video{
+  margin-top:20px;
+  border-radius:16px;
+  overflow:hidden;
+  background:#062A1E;
+  box-shadow:0 18px 36px -28px rgba(2,14,9,.7);
+}
+.cert-video video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;}
+
+@media (max-width:560px){
+  .cover-company,.cover-sub,.cover-name,.cover-city,.cover-role{font-size:16px;letter-spacing:.09em;}
+  .cover .profile-photo{width:132px;}
+  .cover-logo{width:48px;height:48px;padding:7px;}
+}
