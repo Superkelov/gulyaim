@@ -2351,3 +2351,19 @@ body{
   .viewer-img{max-height:64vh;}
   .thumb{width:54px;}
 }
+
+/* MAX button in the header */
+.nav-max{
+  display:inline-flex;align-items:center;gap:8px;
+  height:40px;padding:0 16px;border-radius:999px;
+  border:1px solid rgba(243,240,231,.42);
+  color:var(--on-green);
+  font-size:14px;font-weight:500;
+  transition:background-color .2s var(--ease),border-color .2s var(--ease);
+}
+.nav-max svg{width:17px;height:17px;}
+.nav-max:hover{background:rgba(243,240,231,.12);border-color:var(--on-green);}
+@media (max-width:559px){
+  .nav-max{width:40px;padding:0;justify-content:center;}
+  .nav-max span{display:none;}
+}
