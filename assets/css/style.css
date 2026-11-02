@@ -2367,3 +2367,30 @@ body{
   .nav-max{width:40px;padding:0;justify-content:center;}
   .nav-max span{display:none;}
 }
+
+/* cover: buttons pinned lower, serif font like the name */
+.cover{flex-direction:column;align-items:stretch;justify-content:flex-start;}
+.cover-content{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.cover-links-wrap{width:100%;padding-bottom:clamp(14px,3.5vh,36px);}
+.cover-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+.cover-link{
+  font-family:var(--font-display);
+  font-size:clamp(16px,2vw,21px);
+  font-weight:600;
+  letter-spacing:.1em;
+  line-height:1.1;
+  text-transform:uppercase;
+  min-height:54px;
+  padding:8px 24px;
+  border-radius:999px;
+}
+@media (max-width:560px){
+  .cover-links{flex-direction:column;align-items:stretch;max-width:340px;margin-inline:auto;}
+  .cover-link{width:100%;min-height:50px;font-size:16px;}
+}
+/* slightly bigger logo */
+.cover-logo{width:64px;height:64px;padding:9px;}
+@media (min-width:900px){.cover-logo{width:80px;height:80px;padding:11px;}}
+.about-logo{width:64px;height:64px;padding:9px;}
+
+.cover-links-wrap{position:relative;z-index:3;}
