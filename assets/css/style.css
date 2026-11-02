@@ -2394,3 +2394,7 @@ body{
 .about-logo{width:64px;height:64px;padding:9px;}
 
 .cover-links-wrap{position:relative;z-index:3;}
+
+@media (min-width:900px){
+  .cover-link{font-size:22px;}
+}
